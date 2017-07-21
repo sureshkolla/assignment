@@ -1,0 +1,17 @@
+ul{
+    list-style:none;
+
+}
+ul li{
+    margin-left:25px;
+    cursor:pointer;
+    display:inline;
+    text-decoration: underline;
+}
+ul li:hover{
+    color:red;
+    text-decoration: none;
+}
+ul li.active{
+    color:red;    
+}

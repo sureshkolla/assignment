@@ -1,0 +1,28 @@
+
+<div class="grid">
+		<div class="shadowundertop"></div>
+		 
+		<div class="row space-top">
+			<!-- CONTACT FORM -->
+			<div class="c8 space-top">
+				    <div class="datacomponent">
+                        <br/>
+                         <h1> Service from colors JSON </h1>
+                           <br/>  <br/>
+                        <h4>Change My color</h4>
+                            <select [(ngModel)]="color" (change)="pasvalues($event)">
+                                <option *ngFor="let color of colors" [ngValue]='color' [value]="color"  >{{color}}</option>
+                                </select>
+                        </div>
+
+                        <h1 [style.color]="color" myColor>{{DateTitle}}</h1>
+ 
+
+
+			</div>
+			 
+		</div>
+</div><!-- end grid -->
+
+  
+ 
