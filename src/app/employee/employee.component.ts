@@ -11,7 +11,7 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
     providers: [EmployeeService]
 })
 export class EmployeePage {
-private DateTitle:string;
+   private DateTitle:any;
    public colors:any;
    public myColor1:any;
    color:any;
@@ -21,23 +21,22 @@ private DateTitle:string;
         })
         this.startTime();
   }
-   private checkTime(i) {
-      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-      return i;
+  
+  ngOnInit() {
+   setInterval (() => {
+      this.startTime(); 
+      console.log("Hello from setTimeout");
+    }, 500)
   }
-   private startTime() {
+  
+  private startTime() {
       var today = new Date();
       var h = today.getHours();
       var m = today.getMinutes();
-      var s = today.getSeconds();
-      m = this.checkTime(m);
-      s =  this.checkTime(s);
-      this.DateTitle =    h + ":" + m + ":" + s;
-      setTimeout(this.startTime, 500);
+      var s = today.getSeconds(); 
+      this.DateTitle =    h + ":" + m + ":" + s; 
   }
-  pasvalues(event: any) {
-     console.log(event.color.value);
+  pasvalues(event: any) { 
         this.myColor1 =  this.color.value
-    } 
- 
+    }  
 }
